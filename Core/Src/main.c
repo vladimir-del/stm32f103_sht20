@@ -103,12 +103,16 @@ char buf[40] = {0};
   while (1)
   {
 
+	SHT20_soft_reset();
+
 	SHT20_get();
-	sprintf(buf, "%d.... Tem = %.2f, Hum = %.2f\r\n", sht20_data.crc[0], sht20_data.temp, sht20_data.humidity);
+
+
+	sprintf(buf, "Tem = %.2f, Hum = %.2f\r\n", sht20_data.temp, sht20_data.humidity);
 
 	HAL_UART_Transmit(&huart2, (uint8_t*)buf, strlen(buf), 10);
 
-	HAL_Delay(1000);
+	HAL_Delay(3000);
 
 
 
