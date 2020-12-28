@@ -55,7 +55,7 @@ float static SHT20_calc_humidity(uint16_t raw_temp)
 float static SHT20_get_temp(void)
 {
 	uint8_t temp[3] = {0};
-	HAL_I2C_Mem_Write(&hi2c1, SHT20_ADDR << 1, SHT20_Temp_HM, I2C_MEMADD_SIZE_8BIT, (void *)0, 0, 100);
+	HAL_I2C_Mem_Write(&hi2c1, SHT20_ADDR << 1, SHT20_TEMPERATURE_HM, I2C_MEMADD_SIZE_8BIT, (void *)0, 0, 100);
 
 	HAL_I2C_Master_Receive(&hi2c1, SHT20_ADDR << 1, temp, 3, 100);
 

@@ -16,7 +16,7 @@ extern "C" {
 
 #define SHT20_ADDR 0x40
 #define SHT20_RESET 0xFE
-#define SHT20_Temp_HM 0xE3
+#define SHT20_TEMPERATURE_HM 0xE3
 #define SHT20_HUMIDITY_HM 0xE5
 
 
